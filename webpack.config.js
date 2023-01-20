@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -47,6 +48,7 @@ module.exports = {
             filename: "css/[name].css",
             chunkFilename: "[id].css",
         }),
+        new ESLintPlugin()
     ],
     watchOptions: {
         ignored: /node_modules/,

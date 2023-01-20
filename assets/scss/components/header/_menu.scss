@@ -67,7 +67,7 @@
               right: 0;
               padding: 0 1.5rem;
               background: map-get($colors, "white");
-              border-bottom: 1px solid map-get($colors, "grey");
+              border-bottom: 1px solid map-get($colors, "gray");
               opacity: 0;
               height: 0;
               overflow: hidden;
@@ -84,7 +84,7 @@
                   &__link {
                     position: relative;
                     font-size: 1.6rem;
-                    color: map-get($colors, "grey2");
+                    color: map-get($colors, "gray-dark");
                     transition: 0.3s all;
 
                     &:before {

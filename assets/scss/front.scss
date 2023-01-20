@@ -1,3 +1,11 @@
-@use "bootstrap/bootstrap";
-@use "base";
-@use 'components';
+//bs grid
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/grid";
+
+//style
+@import "base";
+@import 'components';
