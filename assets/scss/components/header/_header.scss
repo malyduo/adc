@@ -1,0 +1,52 @@
+@use "../../variables" as *;
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+
+  &-info {
+    background: map-get($colors, "primary");
+    text-align: center;
+    color: map-get($colors, "white");
+
+    &__content {
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 3.2rem;
+    }
+
+    &__btn-close {
+      position: absolute;
+      display: flex;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:hover {
+        background: map-get($colors, "dark");
+      }
+    }
+  }
+
+  &-main {
+    background: map-get($colors, "white");
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid map-get($colors, "grey");
+
+      .profile {
+        &-link {
+          &__icon {
+            height: 2.3rem;
+          }
+        }
+      }
+    }
+  }
+}

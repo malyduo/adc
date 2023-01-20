@@ -1,0 +1,127 @@
+@use "../../variables" as *;
+
+.header {
+  .nav {
+    .menu {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 45px;
+      list-style-type: none;
+
+      &-item {
+        &--main {
+          min-height: 8.7rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .menu-item__link--main {
+            position: relative;
+
+            &:before {
+              content: "";
+              width: 0%;
+              height: 1px;
+              background: map-get($colors, "dark");
+              display: block;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              transition: 0.3s all;
+            }
+
+            &:hover {
+              &:before {
+                width: 100%;
+              }
+            }
+          }
+
+          .menu {
+            &-item {
+              &--header {
+                flex: 1;
+
+                & > .menu-item__link {
+                  display: inline-block;
+                  font-size: 1.8rem;
+                  font-weight: 500;
+                  color: map-get($colors, "dark");
+                  margin-bottom: 1.5rem;
+                }
+              }
+            }
+
+            &-dropdown {
+              list-style-type: none;
+              position: absolute;
+              display: flex;
+              flex-direction: row;
+              width: 100%;
+              top: 100%;
+              left: 0;
+              right: 0;
+              padding: 0 1.5rem;
+              background: map-get($colors, "white");
+              border-bottom: 1px solid map-get($colors, "grey");
+              opacity: 0;
+              height: 0;
+              overflow: hidden;
+              transition: 0.3s all;
+
+              &--sub {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                & .menu-item__link {
+                  position: relative;
+                  font-size: 1.6rem;
+                  color: map-get($colors, "grey2");
+                  transition: 0.3s all;
+
+                  &:before {
+                    content: "";
+                    width: 0%;
+                    height: 1px;
+                    background: map-get($colors, "primary");
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    transition: 0.3s all;
+                  }
+
+                  &:hover {
+                    color: map-get($colors, "dark");
+
+                    &:before {
+                      width: 100%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &:hover {
+            .menu {
+              &-item__link--main {
+                &:before {
+                  width: 100%;
+                }
+              }
+
+              &-dropdown {
+                opacity: 1;
+                height: auto;
+                padding: 2.5rem 1.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@use "../../variables" as *;
+
+.section-hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 6.4rem;
+    line-height: 77px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3.2rem;
+  }
+
+  &__description {
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 19px;
+    text-align: center;
+    margin: 0 auto;
+
+    @include min(xxl) {
+      max-width: 61.4rem;
+    }
+  }
+}
