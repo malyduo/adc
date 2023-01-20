@@ -1,134 +1,137 @@
-@use "../../variables" as *;
+@use '../../variables' as *;
 
 .header {
-  .nav {
-    min-width: 40.5rem;
+    .nav {
+        min-width: 40.5rem;
 
-    .menu {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 45px;
-      list-style-type: none;
+        .menu {
+            display: flex;
+            gap: 45px;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
 
-      &-item {
-        &--main {
-          min-height: 8.7rem;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          .menu-item__link--main {
-            position: relative;
-
-            &:before {
-              content: "";
-              width: 0%;
-              height: 1px;
-              background: map-get($colors, "dark");
-              display: block;
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              transition: 0.3s all;
-            }
-
-            &:hover {
-              &:before {
-                width: 100%;
-              }
-            }
-          }
-
-          .menu {
             &-item {
-              &--header {
-                flex: 1;
+                &--main {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 8.7rem;
 
-                & > .menu-item__link {
-                  display: inline-block;
-                  font-size: 1.8rem;
-                  font-weight: 500;
-                  color: map-get($colors, "dark");
-                  margin-bottom: 1rem;
-                }
-              }
-            }
+                    .menu-item__link--main {
+                        position: relative;
 
-            &-dropdown {
-              list-style-type: none;
-              position: absolute;
-              display: flex;
-              flex-direction: row;
-              gap: 25px;
-              width: 100%;
-              top: 100%;
-              left: 0;
-              right: 0;
-              padding: 0 1.5rem;
-              background: map-get($colors, "white");
-              border-bottom: 1px solid map-get($colors, "gray");
-              opacity: 0;
-              height: 0;
-              overflow: hidden;
-              transition: 0.3s all;
+                        &:before {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            display: block;
+                            width: 0%;
+                            height: 1px;
+                            background: map-get($colors, 'dark');
+                            transition: 0.3s all;
+                            content: '';
+                        }
 
-              &--sub {
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
+                        &:hover {
+                            &:before {
+                                width: 100%;
+                            }
+                        }
+                    }
 
-                & .menu-item {
-                  margin-bottom: 0.6rem;
+                    .menu {
+                        &-item {
+                            &--header {
+                                flex: 1;
 
-                  &__link {
-                    position: relative;
-                    font-size: 1.6rem;
-                    color: map-get($colors, "gray-dark");
-                    transition: 0.3s all;
+                                & > .menu-item__link {
+                                    display: inline-block;
+                                    margin-bottom: 1rem;
+                                    color: map-get($colors, 'dark');
+                                    font-weight: 500;
+                                    font-size: 1.8rem;
+                                }
+                            }
+                        }
 
-                    &:before {
-                      content: "";
-                      width: 0%;
-                      height: 1px;
-                      background: map-get($colors, "primary");
-                      display: block;
-                      position: absolute;
-                      bottom: 0;
-                      left: 0;
-                      transition: 0.3s all;
+                        &-dropdown {
+                            position: absolute;
+                            top: 100%;
+                            right: 0;
+                            left: 0;
+                            display: flex;
+                            flex-direction: row;
+                            gap: 25px;
+                            width: 100%;
+                            height: 0;
+                            padding: 0 1.5rem;
+                            overflow: hidden;
+                            list-style-type: none;
+                            background: map-get($colors, 'white');
+                            border-bottom: 1px solid map-get($colors, 'gray');
+                            opacity: 0;
+                            transition: 0.3s all;
+
+                            &--sub {
+                                margin: 0;
+                                padding: 0;
+                                list-style-type: none;
+
+                                & .menu-item {
+                                    margin-bottom: 0.6rem;
+
+                                    &__link {
+                                        position: relative;
+                                        color: map-get($colors, 'gray-dark');
+                                        font-size: 1.6rem;
+                                        transition: 0.3s all;
+
+                                        &:before {
+                                            position: absolute;
+                                            bottom: 0;
+                                            left: 0;
+                                            display: block;
+                                            width: 0%;
+                                            height: 1px;
+                                            background: map-get(
+                                                $colors,
+                                                'primary'
+                                            );
+                                            transition: 0.3s all;
+                                            content: '';
+                                        }
+
+                                        &:hover {
+                                            color: map-get($colors, 'dark');
+
+                                            &:before {
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
 
                     &:hover {
-                      color: map-get($colors, "dark");
+                        .menu {
+                            &-item__link--main {
+                                &:before {
+                                    width: 100%;
+                                }
+                            }
 
-                      &:before {
-                        width: 100%;
-                      }
+                            &-dropdown {
+                                height: auto;
+                                padding: 2.4rem 1.5rem;
+                                opacity: 1;
+                            }
+                        }
                     }
-                  }
                 }
-              }
             }
-          }
-
-          &:hover {
-            .menu {
-              &-item__link--main {
-                &:before {
-                  width: 100%;
-                }
-              }
-
-              &-dropdown {
-                opacity: 1;
-                height: auto;
-                padding: 2.4rem 1.5rem;
-              }
-            }
-          }
         }
-      }
     }
-  }
 }

@@ -1,28 +1,28 @@
-@use "../../variables" as *;
+@use '../../variables' as *;
 
 .section-hero {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 
-  &__title {
-    font-size: 6.4rem;
-    line-height: 77px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 3.2rem;
-  }
-
-  &__description {
-    text-align: center;
-    font-size: 1.6rem;
-    line-height: 19px;
-    text-align: center;
-    margin: 0 auto;
-
-    @include min(xxl) {
-      max-width: 61.4rem;
+    &__title {
+        margin-bottom: 3.2rem;
+        font-weight: 700;
+        font-size: 6.4rem;
+        line-height: 77px;
+        text-align: center;
     }
-  }
+
+    &__description {
+        margin: 0 auto;
+        font-size: 1.6rem;
+        line-height: 19px;
+        text-align: center;
+        text-align: center;
+
+        @include min(xxl) {
+            max-width: 61.4rem;
+        }
+    }
 }

@@ -1,28 +1,28 @@
-@use "../variables" as *;
+@use '../variables' as *;
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  min-height: 200vh;
-  font-size: 1.6rem;
-  font-family: "Poppins", sans-serif;
+    min-height: 200vh;
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 a {
-  color: map-get($colors, "dark");
+    color: map-get($colors, 'dark');
 
-  &:hover {
-    color: map-get($colors, "dark");
-    text-decoration: none;
-  }
+    &:hover {
+        color: map-get($colors, 'dark');
+        text-decoration: none;
+    }
 }
 
 .container {
-  max-width: 1250px;
+    max-width: 1250px;
 
-  @include min(xxl) {
-    padding: 0;
-  }
+    @include min(xxl) {
+        padding: 0;
+    }
 }

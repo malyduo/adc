@@ -2,6 +2,9 @@ import Navigation from "./Modules/Navigation";
 import HeaderInfo from "./Modules/HeaderInfo";
 
 window.addEventListener("DOMContentLoaded", () => {
-    Navigation();
-    HeaderInfo();
+    const nav = new Navigation();
+    nav.showHideMenu();
+
+    const headerInfo = new HeaderInfo();
+    headerInfo.init();
 });
