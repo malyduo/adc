@@ -46,15 +46,11 @@ function add_menu_list_item_class($classes, $item, $args)
 
 add_filter('nav_menu_css_class', 'add_menu_list_item_class', 1, 3);
 
-//acf gutenberg
 //hero block
 function block_hero()
 {
-
-    // check function exists
     if (function_exists('acf_register_block')) {
 
-        // register a testimonial block
         acf_register_block(array(
             'name' => 'hero',
             'title' => __('Hero'),
@@ -69,13 +65,11 @@ function block_hero()
 
 add_action('acf/init', 'block_hero');
 
-function hero_block_render_callback( $block ) {
-
-    // convert name ("acf/testimonial") into path friendly slug ("testimonial")
+function hero_block_render_callback($block)
+{
     $slug = str_replace('acf/', '', $block['name']);
 
-    // include a template part from within the "template-parts/block" folder
-    if( file_exists( get_theme_file_path("/templates/block/content-{$slug}.php") ) ) {
-        include( get_theme_file_path("/templates/block/content-{$slug}.php") );
+    if (file_exists(get_theme_file_path("/templates/block/content-{$slug}.php"))) {
+        include(get_theme_file_path("/templates/block/content-{$slug}.php"));
     }
 }
