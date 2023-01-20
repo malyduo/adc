@@ -1537,7 +1537,7 @@ a:hover {
 }
 
 .section-hero__title {
-  margin-bottom: 3.2rem;
+  margin-bottom: 4rem;
   font-weight: 700;
   font-size: 6.4rem;
   line-height: 77px;
@@ -1547,7 +1547,7 @@ a:hover {
 .section-hero__description {
   margin: 0 auto;
   font-size: 1.6rem;
-  line-height: 19px;
+  line-height: 23px;
   text-align: center;
   text-align: center;
 }

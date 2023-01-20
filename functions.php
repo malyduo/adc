@@ -17,7 +17,7 @@ if (!function_exists('theme_setup')) :
         function theme_scripts()
         {
             wp_enqueue_script('krove-js', get_template_directory_uri() . '/public/dist/js/front.js', array(), '1.0.0', 'true');
-            wp_enqueue_style( 'krove-css', get_template_directory_uri() . '/public/dist/css/front.css');
+            wp_enqueue_style('krove-css', get_template_directory_uri() . '/public/dist/css/front.css');
         }
 
         add_action('wp_enqueue_scripts', 'theme_scripts');
@@ -46,3 +46,36 @@ function add_menu_list_item_class($classes, $item, $args)
 
 add_filter('nav_menu_css_class', 'add_menu_list_item_class', 1, 3);
 
+//acf gutenberg
+//hero block
+function block_hero()
+{
+
+    // check function exists
+    if (function_exists('acf_register_block')) {
+
+        // register a testimonial block
+        acf_register_block(array(
+            'name' => 'hero',
+            'title' => __('Hero'),
+            'description' => __('A custom hero block.'),
+            'render_callback' => 'hero_block_render_callback',
+            'category' => 'formatting',
+            'icon' => 'admin-comments',
+            'keywords' => array('hero'),
+        ));
+    }
+}
+
+add_action('acf/init', 'block_hero');
+
+function hero_block_render_callback( $block ) {
+
+    // convert name ("acf/testimonial") into path friendly slug ("testimonial")
+    $slug = str_replace('acf/', '', $block['name']);
+
+    // include a template part from within the "template-parts/block" folder
+    if( file_exists( get_theme_file_path("/templates/block/content-{$slug}.php") ) ) {
+        include( get_theme_file_path("/templates/block/content-{$slug}.php") );
+    }
+}
