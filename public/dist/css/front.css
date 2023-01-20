@@ -8292,6 +8292,7 @@ a:hover {
   color: #FFF;
 }
 .header-info__content {
+  position: relative;
   font-size: 1.2rem;
   display: flex;
   justify-content: center;
@@ -8321,6 +8322,9 @@ a:hover {
   height: 2.3rem;
 }
 
+.header .nav {
+  min-width: 40.5rem;
+}
 .header .nav .menu {
   margin: 0;
   padding: 0;
@@ -8359,13 +8363,14 @@ a:hover {
   font-size: 1.8rem;
   font-weight: 500;
   color: #030303;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .header .nav .menu-item--main .menu-dropdown {
   list-style-type: none;
   position: absolute;
   display: flex;
   flex-direction: row;
+  gap: 25px;
   width: 100%;
   top: 100%;
   left: 0;
@@ -8382,6 +8387,9 @@ a:hover {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+.header .nav .menu-item--main .menu-dropdown--sub .menu-item {
+  margin-bottom: 0.6rem;
 }
 .header .nav .menu-item--main .menu-dropdown--sub .menu-item__link {
   position: relative;
@@ -8412,7 +8420,7 @@ a:hover {
 .header .nav .menu-item--main:hover .menu-dropdown {
   opacity: 1;
   height: auto;
-  padding: 2.5rem 1.5rem;
+  padding: 2.4rem 1.5rem;
 }
 
 .section-hero {
