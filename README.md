@@ -1,4 +1,4 @@
-# adc template only
+# commands
 
-npm install<br />
-npm start for watcher & build
+npm install - init<br />
+npm start - for watcher & build
