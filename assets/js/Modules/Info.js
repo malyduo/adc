@@ -1,14 +1,14 @@
-export default class HeaderInfo {
+export default class Info {
     constructor() {
-        this.headerInfo = document.querySelector(".header-info");
-        this.headerInfoBtn = document.querySelector(".header-info__btn-close");
+        this.headerInfo = document.querySelector(".info");
+        this.headerInfoBtn = document.querySelector(".info__btn-close");
         this.init();
     }
 
     init() {
         const cookies = this.getCookies();
 
-        if (Object.prototype.hasOwnProperty.call(cookies, "header-info")) {
+        if (Object.prototype.hasOwnProperty.call(cookies, "info")) {
             this.hideInfo();
         }
 
@@ -21,7 +21,7 @@ export default class HeaderInfo {
     }
 
     hideInfo() {
-        document.cookie = "header-info=true";
+        document.cookie = "info=true";
         this.headerInfo.style.display = "none";
     }
 

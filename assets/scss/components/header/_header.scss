@@ -5,49 +5,16 @@
     z-index: 999;
     width: 100%;
 
-    &-info {
-        color: map-get($colors, 'white');
-        text-align: center;
-        background: map-get($colors, 'primary');
-
-        &__content {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 3.2rem;
-            font-size: 1.2rem;
-        }
-
-        &__btn-close {
-            position: absolute;
-            top: 50%;
-            right: 0;
-            display: flex;
-            transform: translateY(-50%);
-
-            &:hover {
-                background: map-get($colors, 'dark');
-            }
-        }
+    &__navbar {
+        background: map-get($colors, 'white');
     }
 
-    &-main {
-        background: map-get($colors, 'white');
-
-        .wrapper {
+    .navbar {
+        &__wrapper {
             display: flex;
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid map-get($colors, 'gray');
-
-            .profile {
-                &-link {
-                    &__icon {
-                        height: 2.3rem;
-                    }
-                }
-            }
         }
     }
 }

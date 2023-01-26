@@ -1,5 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
@@ -9,7 +11,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, './public/dist'),
-        filename: "js/[name].js",
+        filename: "js/[name].min.js",
         clean: true,
     },
     module: {
@@ -42,12 +44,17 @@ module.exports = {
             },
         ]
     },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin(),
+            new TerserPlugin()
+        ],
+    },
     plugins: [
         new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename: "css/[name].css",
-            chunkFilename: "[id].css",
+            filename: "css/[name].min.css",
+            chunkFilename: "[id].min.css",
         }),
         new ESLintPlugin(),
         new StylelintPlugin()

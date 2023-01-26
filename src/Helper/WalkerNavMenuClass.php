@@ -50,11 +50,11 @@ class WalkerNavMenu extends Walker_Nav_Menu {
         $classes = array( 'sub-menu' );
 
         if ($depth == 0) {
-            array_push($classes, 'menu-dropdown');
+            array_push($classes, 'menu__dropdown');
         }
 
         if ($depth > 0) {
-            array_push($classes, 'menu-dropdown--sub');
+            array_push($classes, 'menu__sub');
         }
 
         /**
@@ -125,14 +125,14 @@ class WalkerNavMenu extends Walker_Nav_Menu {
         $indent = ( $depth ) ? str_repeat( $t, $depth ) : '';
 
         $classes   = empty( $menu_item->classes ) ? array() : (array) $menu_item->classes;
-        $classes[] = 'menu-item-' . $menu_item->ID;
+        $classes[] = 'menu__item';
 
         if($depth == 0) {
-            $classes[] = 'menu-item--main';
+            $classes[] = 'menu__item--main';
         }
 
         if($depth == 1) {
-            $classes[] = 'menu-item--header';
+            $classes[] = 'menu__item--header';
         }
 
         /**
@@ -171,7 +171,7 @@ class WalkerNavMenu extends Walker_Nav_Menu {
          * @param stdClass $args         An object of wp_nav_menu() arguments.
          * @param int      $depth        Depth of menu item. Used for padding.
          */
-        $id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $menu_item->ID, $menu_item, $args, $depth );
+        $id = apply_filters( 'nav_menu_item_id', 'item-' . $menu_item->ID, $menu_item, $args, $depth );
         $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
         $output .= $indent . '<li' . $id . $class_names . '>';
@@ -212,7 +212,8 @@ class WalkerNavMenu extends Walker_Nav_Menu {
         foreach ( $atts as $attr => $value ) {
             if ( is_scalar( $value ) && '' !== $value && false !== $value ) {
                 $value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
-                $value       = ( 'class' === $attr && $depth == 0) ? $value . ' menu-item__link--main' : esc_attr( $value );
+                $value       = ( 'class' === $attr && $depth == 0) ? $value . ' menu__link--main' : esc_attr( $value );
+                $value       = ( 'class' === $attr && $depth == 1) ? $value . ' menu__link--header' : esc_attr( $value );
                 $attributes .= ' ' . $attr . '="' . $value . '"';
             }
         }

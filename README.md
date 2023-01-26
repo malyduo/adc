@@ -1,4 +1,12 @@
-# commands
+# requirements
+node version required > 10
 
-npm install - init<br />
-npm start - for watcher & build
+# commands
+init<br />
+<code>npm install</code>
+
+watcher / build<br />
+<code>npm start</code>
+
+build<br />
+<code>npm run build</code>

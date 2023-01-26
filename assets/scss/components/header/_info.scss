@@ -1,0 +1,28 @@
+@use '../../variables' as *;
+
+.info {
+    color: map-get($colors, 'white');
+    text-align: center;
+    background: map-get($colors, 'primary');
+
+    &__content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        font-size: 1.2rem;
+    }
+
+    &__btn-close {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        display: flex;
+        transform: translateY(-50%);
+
+        &:hover {
+            background: map-get($colors, 'dark');
+        }
+    }
+}

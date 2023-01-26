@@ -1,10 +1,10 @@
 import Navigation from "./Modules/Navigation";
-import HeaderInfo from "./Modules/HeaderInfo";
+import Info from "./Modules/Info";
 
 window.addEventListener("DOMContentLoaded", () => {
     const nav = new Navigation();
     nav.showHideMenu();
 
-    const headerInfo = new HeaderInfo();
-    headerInfo.init();
+    const info = new Info();
+    info.init();
 });

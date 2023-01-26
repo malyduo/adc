@@ -16,8 +16,8 @@ if (!function_exists('theme_setup')) :
         //scripts
         function theme_scripts()
         {
-            wp_enqueue_script('krove-js', get_template_directory_uri() . '/public/dist/js/front.js', array(), '1.0.0', 'true');
-            wp_enqueue_style('krove-css', get_template_directory_uri() . '/public/dist/css/front.css');
+            wp_enqueue_script('krove-js', get_template_directory_uri() . '/public/dist/js/front.min.js', array(), '1.0.0', 'true');
+            wp_enqueue_style('krove-css', get_template_directory_uri() . '/public/dist/css/front.min.css');
         }
 
         add_action('wp_enqueue_scripts', 'theme_scripts');
